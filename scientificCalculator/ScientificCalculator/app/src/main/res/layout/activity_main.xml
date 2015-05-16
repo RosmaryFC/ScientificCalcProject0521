@@ -1,3 +1,4 @@
+<!--TODO: set when button is touched, a darker background color appears.  -->
 <LinearLayout
     android:orientation="vertical"
     android:background="#ff361e5d"
@@ -24,8 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#ff4e2178"
-            android:text=" "
-            />
+            android:textColor="#fff"
+            android:textSize="40dp"
+            android:text=" "/>
 
     </LinearLayout>
 
@@ -44,7 +46,7 @@
         android:layout_weight="1">
 
         <Button
-            android:id="@+id/c"
+            android:id="@+id/clear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -68,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="x"
+            android:text="*"
             android:background="#ffab89c6"
             android:textColor="#fff"
             android:textSize="40dp"/>
@@ -223,15 +225,36 @@
             android:textColor="#fff"
             android:textSize="40dp"/>
 
-        <Button
-            android:id="@+id/parenthesis"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="()"
-            android:background="#ffab89c6"
-            android:textColor="#fff"
-            android:textSize="40dp"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#fff">
+
+                <Button
+                    android:id="@+id/open_parenthesis"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="("
+                    android:background="#ffab89c6"
+                    android:textColor="#fff"
+                    android:textSize="40dp"/>
+
+                <Button
+                    android:id="@+id/close_parenthesis"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text=")"
+                    android:background="#ffab89c6"
+                    android:textColor="#fff"
+                    android:textSize="40dp"/>
+
+
+                </LinearLayout>
+
 
     </LinearLayout>
 <!--0 . % = -->
@@ -252,7 +275,7 @@
             android:textSize="40dp"/>
 
         <Button
-            android:id="@+id/point"
+            android:id="@+id/decimal_point"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
