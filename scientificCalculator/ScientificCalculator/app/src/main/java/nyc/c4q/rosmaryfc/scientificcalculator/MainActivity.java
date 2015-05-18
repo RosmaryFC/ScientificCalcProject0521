@@ -1,24 +1,62 @@
 package nyc.c4q.rosmaryfc.scientificcalculator;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.EditText;
+import android.widget.TextView;
+
+import com.udojava.evalex.Expression;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
+
+    private Expression expression;
+    private Button one;
+    private Button two;
+    private Button three;
+    private Button four;
+    private Button five;
+    private Button six;
+    private Button seven;
+    private Button eight;
+    private Button nine;
+    private Button zero;
+    private Button equal;
+    private Button open_parenthesis;
+    private Button closed_parenthesis;
+    private Button subtract;
+    private Button percent;
+    private Button decimal_point;
+    private Button add;
+
+    String inputExpression = "";
+    EditText result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        locateViewItems();
+//
+//        assignListeners();
+
+
+
+
+
+
         final EditText editEquation = (EditText) findViewById(R.id.equation);
+
+
 
         //todo: fix issue where onTouch, keyboard should not display but user can move cursor and add text at desired location
         editEquation.setOnTouchListener(new View.OnTouchListener() {
@@ -40,6 +78,9 @@ public class MainActivity extends ActionBarActivity {
                  */
             }
         });
+
+
+
 
 
         //todo: how to add a text to another view by pressing a button and assigning a character to it.
@@ -387,7 +428,9 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-    }
+    }///on create
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
