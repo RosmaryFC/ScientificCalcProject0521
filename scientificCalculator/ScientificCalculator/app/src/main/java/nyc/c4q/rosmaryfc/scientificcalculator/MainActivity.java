@@ -1,140 +1,102 @@
 package nyc.c4q.rosmaryfc.scientificcalculator;
 
 import android.app.Activity;
+import android.content.res.Configuration;
 import android.os.Bundle;
-
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-
 import android.widget.EditText;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.udojava.evalex.Expression;
+import java.math.BigDecimal;
 
 
 public class MainActivity extends Activity {
 
     private Expression expression;
-    private Button one;
-    private Button two;
-    private Button three;
-    private Button four;
-    private Button five;
-    private Button six;
-    private Button seven;
-    private Button eight;
-    private Button nine;
-    private Button zero;
-    private Button equal;
-    private Button open_parenthesis;
-    private Button closed_parenthesis;
-    private Button subtract;
-    private Button percent;
-    private Button decimal_point;
-    private Button add;
+    //protected String input_expression_txt = "";
 
-    String inputExpression = "";
-    EditText result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        locateViewItems();
-//
-//        assignListeners();
-
-
-
-
-
-
-        final EditText editEquation = (EditText) findViewById(R.id.equation);
-
-
-
         //todo: fix issue where onTouch, keyboard should not display but user can move cursor and add text at desired location
-        editEquation.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
+        final EditText input_expression = (EditText) findViewById(R.id.input_expression);
 
-                int inType = editEquation.getInputType(); // backup input type
-                editEquation.setInputType(InputType.TYPE_NULL); // disable soft input
-                //editEquation.onTouchEvent(motionEvent); //call native handler
-                //editEquation.setInputType(inType); // restore input type
-                return true; //consume touch even
+        input_expression.setInputType(InputType.TYPE_NULL);
+        if (android.os.Build.VERSION.SDK_INT >= 11)
+        {
+            input_expression.setRawInputType(InputType.TYPE_CLASS_TEXT);
+            input_expression.setTextIsSelectable(true);
+        }
 
-                /**
-                 * int inType = MyEditor.getInputType(); // backup the input type
-                 MyEditor.setInputType(InputType.TYPE_NULL); // disable soft input
-                 MyEditor.onTouchEvent(event); // call native handler
-                 MyEditor.setInputType(inType); // restore input type
-                 return true; // consume touch even
-                 */
+        final TextView input_answer = (TextView) findViewById(R.id.input_answer);
+
+        //Button =
+        final Button buttonEqual = (Button) findViewById(R.id.equal);
+        buttonEqual.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                expression = new Expression(input_expression.getText().toString());
+                try {
+                    BigDecimal response = expression.eval();
+                    input_answer.setText("" + response);
+                    //input_expression_txt = "";
+
+
+                } catch (Exception exception) {
+                    Toast.makeText(MainActivity.this, "Error:" + exception.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
 
 
-
-
-        //todo: how to add a text to another view by pressing a button and assigning a character to it.
-
         //Button DEL
         final Button buttonDelete = (Button) findViewById(R.id.delete);
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.delete:
+                        if(input_expression.length() != 0) {
 
-                        if(editEquation.length() != 0) {
+                            String str = input_expression.getText().toString();
+                            String newEditEquation = str.substring(0,(input_expression.length()-1));
 
-                            String str = editEquation.getText().toString();
-                            String newEditEquation = str.substring(0,(editEquation.length()-1));
-
-                            editEquation.setText(newEditEquation);
+                            input_expression.setText(newEditEquation);
 
                         } else {
                             // do nothing
                         }
 
                 }
-            }
         });
 
         //Button C
         final Button buttonClear = (Button) findViewById(R.id.clear);
         buttonClear.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.clear:
 
-                        editEquation.setText("");
+                        input_expression.setText("");
+                        input_answer.setText("");
 
-                        break;
                 }
-            }
+
         });
 
         //Button 0
         final Button buttonZero = (Button) findViewById(R.id.zero);
         buttonZero.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.zero:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn0", buttonZero.getText().toString());
-                        String equationTxt = bundle.getString("btn0");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonZero.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -145,10 +107,8 @@ public class MainActivity extends Activity {
                 switch (v.getId()) {
                     case R.id.one:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn1", buttonOne.getText().toString());
-                        String equationTxt = bundle.getString("btn1");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonOne.getText().toString();
+                        input_expression.append(equationTxt);
 
                         break;
                 }
@@ -159,16 +119,10 @@ public class MainActivity extends Activity {
         final Button buttonTwo = (Button) findViewById(R.id.two);
         buttonTwo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.two:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn2", buttonTwo.getText().toString());
-                        String equationTxt = bundle.getString("btn2");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonTwo.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -176,16 +130,10 @@ public class MainActivity extends Activity {
         final Button buttonThree = (Button) findViewById(R.id.three);
         buttonThree.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.three:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn3", buttonThree.getText().toString());
-                        String equationTxt = bundle.getString("btn3");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonThree.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -193,16 +141,10 @@ public class MainActivity extends Activity {
         final Button buttonFour = (Button) findViewById(R.id.four);
         buttonFour.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.four:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn4", buttonFour.getText().toString());
-                        String equationTxt = bundle.getString("btn4");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonFour.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -210,16 +152,10 @@ public class MainActivity extends Activity {
         final Button buttonFive = (Button) findViewById(R.id.five);
         buttonFive.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.five:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn5", buttonFive.getText().toString());
-                        String equationTxt = bundle.getString("btn5");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonFive.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -227,16 +163,10 @@ public class MainActivity extends Activity {
         final Button buttonSix = (Button) findViewById(R.id.six);
         buttonSix.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.six:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn6", buttonSix.getText().toString());
-                        String equationTxt = bundle.getString("btn6");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonSix.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -244,16 +174,10 @@ public class MainActivity extends Activity {
         final Button buttonSeven = (Button) findViewById(R.id.seven);
         buttonSeven.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.seven:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn7", buttonSeven.getText().toString());
-                        String equationTxt = bundle.getString("btn7");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonSeven.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -261,16 +185,10 @@ public class MainActivity extends Activity {
         final Button buttonEight = (Button) findViewById(R.id.eight);
         buttonEight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.eight:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn8", buttonEight.getText().toString());
-                        String equationTxt = bundle.getString("btn8");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonEight.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -278,16 +196,10 @@ public class MainActivity extends Activity {
         final Button buttonNine = (Button) findViewById(R.id.nine);
         buttonNine.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.nine:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn9", buttonNine.getText().toString());
-                        String equationTxt = bundle.getString("btn9");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonNine.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -295,16 +207,10 @@ public class MainActivity extends Activity {
         final Button buttonDivide = (Button) findViewById(R.id.divide);
         buttonDivide.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.divide:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn/", buttonDivide.getText().toString());
-                        String equationTxt = bundle.getString("btn/");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonDivide.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -312,16 +218,10 @@ public class MainActivity extends Activity {
         final Button buttonMultiply = (Button) findViewById(R.id.multiply);
         buttonMultiply.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.multiply:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn*", buttonMultiply.getText().toString());
-                        String equationTxt = bundle.getString("btn*");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonMultiply.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -329,16 +229,10 @@ public class MainActivity extends Activity {
         final Button buttonSubtract = (Button) findViewById(R.id.subtract);
         buttonSubtract.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.subtract:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn-", buttonSubtract.getText().toString());
-                        String equationTxt = bundle.getString("btn-");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonSubtract.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -346,16 +240,10 @@ public class MainActivity extends Activity {
         final Button buttonAdd = (Button) findViewById(R.id.add);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.add:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn+", buttonAdd.getText().toString());
-                        String equationTxt = bundle.getString("btn+");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonAdd.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -363,16 +251,10 @@ public class MainActivity extends Activity {
         final Button buttonDecimalPoint = (Button) findViewById(R.id.decimal_point);
         buttonDecimalPoint.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.decimal_point:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn.", buttonDecimalPoint.getText().toString());
-                        String equationTxt = bundle.getString("btn.");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonDecimalPoint.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -380,16 +262,10 @@ public class MainActivity extends Activity {
         final Button buttonOpenParenthesis = (Button) findViewById(R.id.open_parenthesis);
         buttonOpenParenthesis.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.open_parenthesis:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn(", buttonOpenParenthesis.getText().toString());
-                        String equationTxt = bundle.getString("btn(");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonOpenParenthesis.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
@@ -397,40 +273,40 @@ public class MainActivity extends Activity {
         final Button buttonCloseParenthesis = (Button) findViewById(R.id.close_parenthesis);
         buttonCloseParenthesis.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.close_parenthesis:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn)", buttonCloseParenthesis.getText().toString());
-                        String equationTxt = bundle.getString("btn)");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonCloseParenthesis.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
-
 
         //Button %
         final Button buttonPercent = (Button) findViewById(R.id.percent);
         buttonPercent.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.percent:
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("btn%", buttonPercent.getText().toString());
-                        String equationTxt = bundle.getString("btn%");
-                        editEquation.append(equationTxt);
+                        String equationTxt = buttonPercent.getText().toString();
+                        input_expression.append(equationTxt);
 
-                        break;
-                }
             }
         });
 
-    }///on create
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button pi
+            final Button buttonPi = (Button) findViewById(R.id.pi);
+            buttonPi.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
 
+                    String equationTxt = buttonPi.getText().toString();
+                    input_expression.append(equationTxt);
 
+                }
+            });
+
+        }
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -456,3 +332,4 @@ public class MainActivity extends Activity {
 
 
 }
+

@@ -14,19 +14,32 @@
 
 <!-- The first line where you  will be creating your problems-->
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="6">
 
         <!-- Might be a textview. do not want keyboard. can determine where you want to type-->
         <EditText
-            android:id="@+id/equation"
+            android:id="@+id/input_expression"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="#ff4e2178"
             android:textColor="#fff"
             android:textSize="40dp"
+            android:gravity="right"
+            android:text=" "/>
+
+        <TextView
+            android:id="@+id/input_answer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ff4e2178"
+            android:textColor="#ff68ff65"
+            android:textSize="40dp"
+            android:gravity="right"
             android:text=" "/>
 
     </LinearLayout>
