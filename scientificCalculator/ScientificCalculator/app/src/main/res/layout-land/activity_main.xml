@@ -39,7 +39,8 @@
             android:textColor="#ff68ff65"
             android:textSize="30dp"
             android:gravity="right"
-            android:text=" "/>
+            android:text=" "
+            />
 
 
     </LinearLayout>
@@ -50,7 +51,8 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_weight="1"
-        android:background="#fff">
+        android:background="#fff"
+       >
 
         <!--Linear Layout bottom left-->
 
@@ -64,14 +66,16 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="3">
+                android:layout_weight="3"
+                android:background="@drawable/nice_button">
 
                 <!-- rad deg x!-->
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:background="@drawable/nice_button">
 
                     <Button
                         android:id="@+id/radian"
@@ -81,7 +85,8 @@
                         android:text="RAD"
                         android:background="#ffe98cff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="40dp"
+                        />
 
                     <Button
                         android:id="@+id/degree"
@@ -98,7 +103,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="x!"
+                        android:text="!"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -154,7 +159,8 @@
                     android:layout_weight="1"
                     android:background="#ffe8c3ff"
                     android:textColor="#fff"
-                    android:textSize="40dp">
+                    android:textSize="40dp"
+                 >
 
                     <Button
                         android:id="@+id/pi"
@@ -195,15 +201,15 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
 
-                    <!--<Button-->
-                        <!--android:id="@+id/e"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_weight="1"-->
-                        <!--android:text="e"-->
-                        <!--android:background="#ffe8c3ff"-->
-                        <!--android:textColor="#fff"-->
-                        <!--android:textSize="40dp"/>-->
+                    <Button
+                        android:id="@+id/e"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="e"
+                        android:background="#ffe8c3ff"
+                        android:textColor="#fff"
+                        android:textSize="40dp"/>
 
                     <Button
                         android:id="@+id/tan"
@@ -250,7 +256,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="^"
+                        android:text=" ^ "
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>

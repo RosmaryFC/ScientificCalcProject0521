@@ -12,7 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.udojava.evalex.Expression;
+import com.fathzer.soft.javaluator.DoubleEvaluator;
+
 import java.math.BigDecimal;
+
+
 
 
 public class MainActivity extends Activity {
