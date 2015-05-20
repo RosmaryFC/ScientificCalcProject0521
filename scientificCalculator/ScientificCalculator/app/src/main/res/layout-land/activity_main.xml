@@ -39,7 +39,8 @@
             android:textColor="#ff68ff65"
             android:textSize="30dp"
             android:gravity="right"
-            android:text=" "/>
+            android:text=" "
+            />
 
 
     </LinearLayout>
@@ -50,7 +51,8 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_weight="1"
-        android:background="#fff">
+        android:background="#fff"
+       >
 
         <!--Linear Layout bottom left-->
 
@@ -64,31 +66,34 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="3">
+                android:layout_weight="3"
+                android:background="@drawable/nice_button">
 
                 <!-- rad deg x!-->
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:background="@drawable/nice_button">
 
                     <Button
                         android:id="@+id/radian"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="rad"
+                        android:text="RAD"
                         android:background="#ffe98cff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="40dp"
+                        />
 
                     <Button
                         android:id="@+id/degree"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="deg"
+                        android:text="DEG"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -98,7 +103,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="x!"
+                        android:text="!"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -118,7 +123,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Inv"
+                        android:text="INV"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"
@@ -129,7 +134,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="sin"
+                        android:text="SIN"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -139,7 +144,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="ln"
+                        android:text="LN"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -154,14 +159,15 @@
                     android:layout_weight="1"
                     android:background="#ffe8c3ff"
                     android:textColor="#fff"
-                    android:textSize="40dp">
+                    android:textSize="40dp"
+                 >
 
                     <Button
                         android:id="@+id/pi"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="π"
+                        android:text="PI"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -171,7 +177,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="cos"
+                        android:text="COS"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -181,7 +187,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="log"
+                        android:text="LOG"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -210,7 +216,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="tan"
+                        android:text="TAN"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -250,7 +256,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="X^y"
+                        android:text=" ^ "
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -260,7 +266,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="√"
+                        android:text="SQRT"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
