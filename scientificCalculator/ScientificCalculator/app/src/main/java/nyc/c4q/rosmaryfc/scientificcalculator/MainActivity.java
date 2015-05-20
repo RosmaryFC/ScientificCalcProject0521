@@ -306,6 +306,109 @@ public class MainActivity extends Activity {
 
         }
 
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button square root
+            final Button buttonSqrt = (Button) findViewById(R.id.square_root);
+            buttonSqrt.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonSqrt.getText().toString();
+
+                    input_expression.append(equationTxt);
+
+                }
+            });
+
+        }
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button COS
+            final Button buttonCos = (Button) findViewById(R.id.cos);
+            buttonCos.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonCos.getText().toString();
+                    input_expression.append(equationTxt);
+
+                }
+            });
+
+        }
+
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button SIN
+            final Button buttonSin = (Button) findViewById(R.id.sine);
+            buttonSin.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonSin.getText().toString();
+                    input_expression.append(equationTxt);
+
+                }
+            });
+
+        } if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button TAN
+            final Button buttonTan = (Button) findViewById(R.id.tan);
+            buttonTan.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonTan.getText().toString();
+                    input_expression.append(equationTxt);
+
+                }
+            });
+
+        }
+
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button Factorial
+            final Button buttonFact = (Button) findViewById(R.id.factor);
+            buttonFact.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonFact.getText().toString();
+                    input_expression.append(equationTxt);
+
+                }
+            });
+
+        }
+
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button Degree
+            final Button buttonDeg = (Button) findViewById(R.id.factor);
+            buttonDeg.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonDeg.getText().toString();
+                    input_expression.append(equationTxt);
+
+                }
+            });
+
+        }
+
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button Radians
+            final Button buttonRad = (Button) findViewById(R.id.radian);
+            buttonRad.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonRad.getText().toString();
+                    input_expression.append(equationTxt);
+
+                }
+            });
+
+        }
+
     }
 
     @Override

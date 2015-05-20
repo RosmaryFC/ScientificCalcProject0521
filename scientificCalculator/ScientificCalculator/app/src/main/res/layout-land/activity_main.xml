@@ -78,7 +78,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="rad"
+                        android:text="RAD"
                         android:background="#ffe98cff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -88,7 +88,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="deg"
+                        android:text="DEG"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -118,7 +118,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Inv"
+                        android:text="INV"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"
@@ -129,7 +129,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="sin"
+                        android:text="SIN"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -139,7 +139,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="ln"
+                        android:text="LN"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -161,7 +161,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="π"
+                        android:text="PI"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -171,7 +171,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="cos"
+                        android:text="COS"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -181,7 +181,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="log"
+                        android:text="LOG"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -195,22 +195,22 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
 
-                    <Button
-                        android:id="@+id/e"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="e"
-                        android:background="#ffe8c3ff"
-                        android:textColor="#fff"
-                        android:textSize="40dp"/>
+                    <!--<Button-->
+                        <!--android:id="@+id/e"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:text="e"-->
+                        <!--android:background="#ffe8c3ff"-->
+                        <!--android:textColor="#fff"-->
+                        <!--android:textSize="40dp"/>-->
 
                     <Button
                         android:id="@+id/tan"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="tan"
+                        android:text="TAN"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -250,7 +250,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="X^y"
+                        android:text="^"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -260,7 +260,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="√"
+                        android:text="SQRT"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
