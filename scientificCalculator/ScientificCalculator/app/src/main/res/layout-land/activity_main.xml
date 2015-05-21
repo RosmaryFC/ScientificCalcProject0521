@@ -28,7 +28,7 @@
             android:textColor="#fff"
             android:textSize="30dp"
             android:gravity="right"
-            android:text=" "/>
+            android:text=""/>
 
         <TextView
             android:id="@+id/input_answer"
@@ -39,7 +39,7 @@
             android:textColor="#ff68ff65"
             android:textSize="30dp"
             android:gravity="right"
-            android:text=" "
+            android:text=""
             />
 
 
