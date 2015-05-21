@@ -750,14 +750,14 @@ public class Expression {
                 return parameters.get(0).abs(mc);
             }
         });
-        addFunction(new Function("LOG", 1) {
+        addFunction(new Function("LN", 1) {
             @Override
             public BigDecimal eval(List<BigDecimal> parameters) {
                 double d = Math.log(parameters.get(0).doubleValue());
                 return new BigDecimal(d, mc);
             }
         });
-        addFunction(new Function("LOG10", 1) {
+        addFunction(new Function("LOG10", 1) { //Log 10
             @Override
             public BigDecimal eval(List<BigDecimal> parameters) {
                 double d = Math.log10(parameters.get(0).doubleValue());
@@ -1131,6 +1131,14 @@ public class Expression {
             result += st;
         }
         return result;
+    }
+
+
+    public  static void factorial (int input) {
+        int Result =1;
+        for ( int i = input; i >1; i --) {
+            Result =Result*i;
+        }
     }
 
 }

@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
     }
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -440,14 +441,14 @@ public class MainActivity extends Activity {
         buttonPercent.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                if (expressionIsEvaluated) {
-                    input_expression.setText("");
-                    input_answer.setText("");
-                    expressionIsEvaluated = false;
-                }
+//                if (expressionIsEvaluated) {
+//                    input_expression.setText("");
+//                    input_answer.setText("");
+//                    expressionIsEvaluated = false;
+//                }
 
                 String equationTxt = buttonPercent.getText().toString();
-                input_expression.append(equationTxt);
+                input_expression.append("/100");
 
             }
         });
@@ -466,7 +467,7 @@ public class MainActivity extends Activity {
             });
 
         }
-
+          //ButtonSquare Root
         if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
             //Button square root
@@ -536,8 +537,14 @@ public class MainActivity extends Activity {
                     String equationTxt = buttonFact.getText().toString();
                     input_expression.append(equationTxt);
 
+
                 }
             });
+
+
+
+
+
 
         }
 
@@ -550,6 +557,7 @@ public class MainActivity extends Activity {
 
                     String equationTxt = buttonDeg.getText().toString();
                     input_expression.append(equationTxt);
+
 
                 }
             });
@@ -574,11 +582,11 @@ public class MainActivity extends Activity {
         if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
             //Button Log10
-            final Button buttonLog10= (Button) findViewById(R.id.Log10);
-            buttonLog10.setOnClickListener(new View.OnClickListener() {
+            final Button buttonLog= (Button) findViewById(R.id.log10);
+            buttonLog.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
-                    String equationTxt = buttonLog10.getText().toString();
+                    String equationTxt = buttonLog.getText().toString();
                     input_expression.append(equationTxt);
 
                 }
@@ -594,6 +602,21 @@ public class MainActivity extends Activity {
                 public void onClick(View v) {
 
                     String equationTxt = buttonCarat.getText().toString();
+                    input_expression.append("^");
+
+                }
+            });
+
+        }
+
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button LN
+            final Button buttonLN = (Button) findViewById(R.id.LOG);
+            buttonLN.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonLN.getText().toString();
                     input_expression.append(equationTxt);
 
                 }
@@ -603,13 +626,28 @@ public class MainActivity extends Activity {
 
         if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
-            //Button Log
-            final Button buttonLog = (Button) findViewById(R.id.Log);
-            buttonLog.setOnClickListener(new View.OnClickListener() {
+            //Button abs
+            final Button buttonAbs = (Button) findViewById(R.id.abs);
+            buttonAbs.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
-                    String equationTxt = buttonLog.getText().toString();
+                    String equationTxt = buttonAbs.getText().toString();
                     input_expression.append(equationTxt);
+
+                }
+            });
+
+        }
+
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button EXP
+            final Button buttonExp = (Button) findViewById(R.id.exp);
+            buttonExp.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonExp.getText().toString();
+                    input_expression.append("*10^");
 
                 }
             });
@@ -641,6 +679,9 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
 
 
 }
