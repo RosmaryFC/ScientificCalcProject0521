@@ -101,11 +101,11 @@
                         android:textSize="40dp"/>
 
                     <Button
-                        android:id="@+id/factor"
+                        android:id="@+id/e"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="!"
+                        android:text="e"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
                         android:textSize="40dp"/>
@@ -212,7 +212,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="e"
+                        android:text="EXP"
                         android:textAllCaps="false"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
