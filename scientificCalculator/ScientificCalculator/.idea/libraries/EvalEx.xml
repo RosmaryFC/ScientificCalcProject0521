@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="EvalEx">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/EvalEx.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

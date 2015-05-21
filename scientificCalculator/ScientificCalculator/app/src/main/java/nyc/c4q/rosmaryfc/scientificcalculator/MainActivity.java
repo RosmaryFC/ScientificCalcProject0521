@@ -11,10 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.udojava.evalex.Expression;
-import com.fathzer.soft.javaluator.DoubleEvaluator;
 
 import java.math.BigDecimal;
+
 
 
 
@@ -399,13 +400,58 @@ public class MainActivity extends Activity {
         }
 
         if (getResources().getConfiguration().orientation ==
+    Configuration.ORIENTATION_LANDSCAPE) {
+        //Button Radians
+        final Button buttonRad = (Button) findViewById(R.id.radian);
+        buttonRad.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                String equationTxt = buttonRad.getText().toString();
+                input_expression.append(equationTxt);
+
+            }
+        });
+
+    }
+
+        if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
-            //Button Radians
-            final Button buttonRad = (Button) findViewById(R.id.radian);
-            buttonRad.setOnClickListener(new View.OnClickListener() {
+            //Button Log10
+            final Button buttonLog10= (Button) findViewById(R.id.Log10);
+            buttonLog10.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
-                    String equationTxt = buttonRad.getText().toString();
+                    String equationTxt = buttonLog10.getText().toString();
+                    input_expression.append(equationTxt);
+
+                }
+            });
+
+        }
+
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button ^
+            final Button buttonCarat = (Button) findViewById(R.id.exponent);
+            buttonCarat.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonCarat.getText().toString();
+                    input_expression.append(equationTxt);
+
+                }
+            });
+
+        }
+
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button Log
+            final Button buttonLog = (Button) findViewById(R.id.Log);
+            buttonLog.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonLog.getText().toString();
                     input_expression.append(equationTxt);
 
                 }
@@ -414,6 +460,8 @@ public class MainActivity extends Activity {
         }
 
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -183,7 +183,7 @@
                         android:textSize="40dp"/>
 
                     <Button
-                        android:id="@+id/log"
+                        android:id="@+id/Log"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -222,14 +222,14 @@
                         android:textSize="40dp"/>
 
                     <Button
-                        android:id="@+id/exponent"
+                        android:id="@+id/Log10"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="EXP"
+                        android:text="LOG10"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="25dp"/>
 
 
 
@@ -252,7 +252,7 @@
                         android:textSize="40dp"/>
 
                     <Button
-                        android:id="@+id/Xy"
+                        android:id="@+id/exponent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
