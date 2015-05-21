@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_calc"
+        android:icon="@mipmap/ic_purple"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
