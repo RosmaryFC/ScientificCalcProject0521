@@ -51,8 +51,7 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_weight="1"
-        android:background="#fff"
-       >
+        android:background="#fff">
 
         <!--Linear Layout bottom left-->
 
@@ -83,10 +82,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="RAD"
-                        android:background="#ffe98cff"
+                        android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"
-                        />
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/degree"
@@ -96,7 +94,7 @@
                         android:text="DEG"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/factor"
@@ -106,7 +104,7 @@
                         android:text="!"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
 
                 </LinearLayout>
@@ -124,9 +122,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="INV"
-                        android:background="#ffe8c3ff"
+                        android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"
+                        android:textSize="30dp"
                         android:textAlignment="center"/>
 
                     <Button
@@ -135,9 +133,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="SIN"
-                        android:background="#ffe8c3ff"
+                        android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/ln"
@@ -145,9 +143,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="LN"
-                        android:background="#ffe8c3ff"
+                        android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                 </LinearLayout>
 
@@ -156,11 +154,7 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="#ffe8c3ff"
-                    android:textColor="#fff"
-                    android:textSize="40dp"
-                 >
+                    android:layout_weight="1">
 
                     <Button
                         android:id="@+id/pi"
@@ -168,9 +162,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="PI"
-                        android:background="#ffe8c3ff"
+                        android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/cos"
@@ -178,9 +172,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="COS"
-                        android:background="#ffe8c3ff"
+                        android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/Log"
@@ -188,9 +182,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="LOG"
-                        android:background="#ffe8c3ff"
+                        android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                 </LinearLayout>
 
@@ -207,9 +201,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="e"
-                        android:background="#ffe8c3ff"
+                        android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/tan"
@@ -217,9 +211,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="TAN"
-                        android:background="#ffe8c3ff"
+                        android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/Log10"
@@ -227,7 +221,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="LOG10"
-                        android:background="#ffe8c3ff"
+                        android:background="#ffab89c6"
                         android:textColor="#fff"
                         android:textSize="25dp"/>
 
@@ -247,9 +241,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Ans"
-                        android:background="#ffe8c3ff"
+                        android:background="#ffe98cff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/exponent"
@@ -257,9 +251,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text=" ^ "
-                        android:background="#ffe8c3ff"
+                        android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/square_root"
@@ -269,7 +263,7 @@
                         android:text="SQRT"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                 </LinearLayout>
 
@@ -304,7 +298,7 @@
                         android:text="C"
                         android:background="#ffe98cff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/divide"
@@ -314,7 +308,7 @@
                         android:text="/"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/multiply"
@@ -324,7 +318,7 @@
                         android:text="*"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/delete"
@@ -334,7 +328,7 @@
                         android:text="del"
                         android:background="#ffe98cff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                 </LinearLayout>
 
@@ -353,7 +347,7 @@
                         android:text="7"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/eight"
@@ -363,7 +357,7 @@
                         android:text="8"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/nine"
@@ -373,7 +367,7 @@
                         android:text="9"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/subtract"
@@ -383,7 +377,7 @@
                         android:text="-"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"
+                        android:textSize="30dp"
                         />
 
                 </LinearLayout>
@@ -396,7 +390,7 @@
                     android:layout_weight="1"
                     android:background="#ffe8c3ff"
                     android:textColor="#fff"
-                    android:textSize="40dp">
+                    android:textSize="30dp">
 
                     <Button
                         android:id="@+id/four"
@@ -406,7 +400,7 @@
                         android:text="4"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/five"
@@ -416,7 +410,7 @@
                         android:text="5"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/six"
@@ -426,7 +420,7 @@
                         android:text="6"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/add"
@@ -436,7 +430,7 @@
                         android:text="+"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                 </LinearLayout>
 
@@ -455,7 +449,7 @@
                         android:text="1"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/two"
@@ -465,7 +459,7 @@
                         android:text="2"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/three"
@@ -475,14 +469,13 @@
                         android:text="3"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="#fff">
+                        android:layout_weight="1">
 
                         <Button
                             android:id="@+id/open_parenthesis"
@@ -492,7 +485,7 @@
                             android:text="("
                             android:background="#ffab89c6"
                             android:textColor="#fff"
-                            android:textSize="40dp"/>
+                            android:textSize="30dp"/>
 
                         <Button
                             android:id="@+id/close_parenthesis"
@@ -502,7 +495,7 @@
                             android:text=")"
                             android:background="#ffab89c6"
                             android:textColor="#fff"
-                            android:textSize="40dp"/>
+                            android:textSize="30dp"/>
 
 
                     </LinearLayout>
@@ -524,7 +517,7 @@
                         android:text="0"
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/decimal_point"
@@ -534,7 +527,7 @@
                         android:text="."
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/percent"
@@ -544,7 +537,7 @@
                         android:text="%"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                     <Button
                         android:id="@+id/equal"
@@ -554,7 +547,7 @@
                         android:text="="
                         android:background="#ffe98cff"
                         android:textColor="#fff"
-                        android:textSize="40dp"/>
+                        android:textSize="30dp"/>
 
                 </LinearLayout>
 

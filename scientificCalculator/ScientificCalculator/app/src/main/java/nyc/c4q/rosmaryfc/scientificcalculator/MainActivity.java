@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
 
     private Expression expression;
     private boolean expressionIsEvaluated;
+    private String answerForBtnAns;
     //protected String input_expression_txt = "";
 
     public boolean previousCharIsOperator(String expression) {
@@ -53,6 +54,8 @@ public class MainActivity extends Activity {
 
 
         expressionIsEvaluated = false;
+        answerForBtnAns = "";
+
 
         //Button =
         final Button buttonEqual = (Button) findViewById(R.id.equal);
@@ -63,7 +66,12 @@ public class MainActivity extends Activity {
                 try {
                     BigDecimal response = expression.eval();
                     input_answer.setText(response.toPlainString());
+
+                    answerForBtnAns = response.toPlainString();
+
                     //input_expression_txt = "";
+
+
 
 
                 } catch (Exception exception) {
@@ -452,6 +460,9 @@ public class MainActivity extends Activity {
             }
         });
 
+
+        //Landscape buttons --------------------------------------
+
         if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
             //Button pi
@@ -611,6 +622,34 @@ public class MainActivity extends Activity {
                     String equationTxt = buttonLog.getText().toString();
                     input_expression.append(equationTxt);
 
+                }
+            });
+
+        }
+
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button ANS
+            final Button buttonAns = (Button) findViewById(R.id.answer);
+            buttonAns.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    if (expressionIsEvaluated) {
+                        input_expression.setText("");
+                        input_answer.setText("");
+                        expressionIsEvaluated = false;
+                    }
+                    String expString = input_expression.getText().toString();
+
+                    if(answerForBtnAns.length() == 0) {
+                        return;
+                    } else if(expString.length()>= 1) {
+                        if(expString.substring(((expString.length() - answerForBtnAns.length()) ), (expString.length())).equals(answerForBtnAns)) {
+                            input_expression.append("*" + answerForBtnAns);
+                        }
+                    }else if (answerForBtnAns.length() != 0) {
+                        input_expression.append(answerForBtnAns);
+                    }
                 }
             });
 
