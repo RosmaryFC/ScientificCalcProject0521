@@ -17,13 +17,22 @@ import com.udojava.evalex.Expression;
 import java.math.BigDecimal;
 
 
-
-
-
 public class MainActivity extends Activity {
 
     private Expression expression;
+    private boolean expressionIsEvaluated;
     //protected String input_expression_txt = "";
+
+    public boolean previousCharIsOperand (String expression) {
+
+        if(expression.length() >= 1){
+            char previous_Char = expression.charAt(expression.length()-1);
+            if(previous_Char == '/' || previous_Char == '*' || previous_Char == '-' || previous_Char == '.' || previous_Char == '+' || previous_Char == '%'|| previous_Char == '('){
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     @Override
@@ -35,13 +44,15 @@ public class MainActivity extends Activity {
         final EditText input_expression = (EditText) findViewById(R.id.input_expression);
 
         input_expression.setInputType(InputType.TYPE_NULL);
-        if (android.os.Build.VERSION.SDK_INT >= 11)
-        {
+        if (android.os.Build.VERSION.SDK_INT >= 11) {
             input_expression.setRawInputType(InputType.TYPE_CLASS_TEXT);
             input_expression.setTextIsSelectable(true);
         }
 
         final TextView input_answer = (TextView) findViewById(R.id.input_answer);
+
+
+        expressionIsEvaluated = false;
 
         //Button =
         final Button buttonEqual = (Button) findViewById(R.id.equal);
@@ -51,7 +62,7 @@ public class MainActivity extends Activity {
                 expression = new Expression(input_expression.getText().toString());
                 try {
                     BigDecimal response = expression.eval();
-                    input_answer.setText("" + response);
+                    input_answer.setText(response.toPlainString());
                     //input_expression_txt = "";
 
 
@@ -59,27 +70,36 @@ public class MainActivity extends Activity {
                     Toast.makeText(MainActivity.this, "Error:" + exception.getMessage(), Toast.LENGTH_LONG).show();
                 }
 
+                expressionIsEvaluated = true;
+
             }
         });
-
 
 
         //Button DEL
         final Button buttonDelete = (Button) findViewById(R.id.delete);
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                        if(input_expression.length() != 0) {
 
-                            String str = input_expression.getText().toString();
-                            String newEditEquation = str.substring(0,(input_expression.length()-1));
+                if(expressionIsEvaluated){
+                    input_expression.setText(input_answer.getText().toString());
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
 
-                            input_expression.setText(newEditEquation);
+                } else {
+                    if (input_expression.length() != 0) {
 
-                        } else {
-                            // do nothing
-                        }
+                        String str = input_expression.getText().toString();
+                        String newEditEquation = str.substring(0, (input_expression.length() - 1));
 
+                        input_expression.setText(newEditEquation);
+
+                    } else {
+                        // do nothing
+                    }
                 }
+
+            }
         });
 
         //Button C
@@ -87,10 +107,10 @@ public class MainActivity extends Activity {
         buttonClear.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        input_expression.setText("");
-                        input_answer.setText("");
+                input_expression.setText("");
+                input_answer.setText("");
 
-                }
+            }
 
         });
 
@@ -99,8 +119,14 @@ public class MainActivity extends Activity {
         buttonZero.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonZero.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonZero.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
@@ -109,14 +135,16 @@ public class MainActivity extends Activity {
         final Button buttonOne = (Button) findViewById(R.id.one);
         buttonOne.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.one:
 
-                        String equationTxt = buttonOne.getText().toString();
-                        input_expression.append(equationTxt);
-
-                        break;
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
                 }
+
+                String equationTxt = buttonOne.getText().toString();
+                input_expression.append(equationTxt);
+
             }
         });
 
@@ -125,8 +153,14 @@ public class MainActivity extends Activity {
         buttonTwo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonTwo.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonTwo.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
@@ -136,8 +170,14 @@ public class MainActivity extends Activity {
         buttonThree.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonThree.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonThree.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
@@ -147,8 +187,14 @@ public class MainActivity extends Activity {
         buttonFour.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonFour.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonFour.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
@@ -158,8 +204,14 @@ public class MainActivity extends Activity {
         buttonFive.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonFive.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonFive.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
@@ -169,8 +221,14 @@ public class MainActivity extends Activity {
         buttonSix.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonSix.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonSix.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
@@ -180,8 +238,14 @@ public class MainActivity extends Activity {
         buttonSeven.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonSeven.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonSeven.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
@@ -191,8 +255,14 @@ public class MainActivity extends Activity {
         buttonEight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonEight.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonEight.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
@@ -202,8 +272,14 @@ public class MainActivity extends Activity {
         buttonNine.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonNine.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonNine.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
@@ -213,8 +289,20 @@ public class MainActivity extends Activity {
         buttonDivide.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonDivide.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String inputExpStr = input_expression.getText().toString();
+                if(inputExpStr.length() == 0 || previousCharIsOperand(inputExpStr)) {
+                    return;
+                } else {
+                    String equationTxt = buttonDivide.getText().toString();
+                    input_expression.append(equationTxt);
+                }
+
 
             }
         });
@@ -224,8 +312,18 @@ public class MainActivity extends Activity {
         buttonMultiply.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonMultiply.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String inputExpStr = input_expression.getText().toString();
+                if(inputExpStr.length() == 0 || previousCharIsOperand(inputExpStr)) {
+                    return;
+                } else {
+                    String equationTxt = buttonMultiply.getText().toString();
+                    input_expression.append(equationTxt);
+                }
 
             }
         });
@@ -235,9 +333,19 @@ public class MainActivity extends Activity {
         buttonSubtract.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonSubtract.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
 
+                String inputExpStr = input_expression.getText().toString();
+                if(inputExpStr.length() == 0 || previousCharIsOperand(inputExpStr)) {
+                    return;
+                }else {
+                    String equationTxt = buttonSubtract.getText().toString();
+                    input_expression.append(equationTxt);
+                }
             }
         });
 
@@ -246,19 +354,48 @@ public class MainActivity extends Activity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonAdd.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
 
+                String inputExpStr = input_expression.getText().toString();
+                if(inputExpStr.length() == 0 || previousCharIsOperand(inputExpStr)) {
+                    return;
+                }else {
+                    String equationTxt = buttonAdd.getText().toString();
+                    input_expression.append(equationTxt);
+                }
             }
         });
 
+
+        //Todo: fix decimal so that after operand it will be able to add another decimal again. && will only contain one decimal per num
         //Button .
         final Button buttonDecimalPoint = (Button) findViewById(R.id.decimal_point);
         buttonDecimalPoint.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonDecimalPoint.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String inputExpStr = input_expression.getText().toString();
+
+                //adds 0 before .
+                if(inputExpStr.length() >= 2 ) { // does not add . if last two chars are 0.
+                    if(inputExpStr.substring(inputExpStr.length()-2, inputExpStr.length()-1) == "0.") {
+                        return;
+                    }
+                } else if(inputExpStr.length() == 0 || previousCharIsOperand(inputExpStr)) { //adds 0. if last char is + - * / % (
+                    input_expression.append("0.");
+                } else {
+                    String equationTxt = buttonDecimalPoint.getText().toString();
+                    input_expression.append(equationTxt);
+                }
 
             }
         });
@@ -268,8 +405,14 @@ public class MainActivity extends Activity {
         buttonOpenParenthesis.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonOpenParenthesis.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonOpenParenthesis.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
@@ -279,19 +422,32 @@ public class MainActivity extends Activity {
         buttonCloseParenthesis.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonCloseParenthesis.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonCloseParenthesis.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
 
+        //todo: configure button
         //Button %
         final Button buttonPercent = (Button) findViewById(R.id.percent);
         buttonPercent.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                        String equationTxt = buttonPercent.getText().toString();
-                        input_expression.append(equationTxt);
+                if (expressionIsEvaluated) {
+                    input_expression.setText("");
+                    input_answer.setText("");
+                    expressionIsEvaluated = false;
+                }
+
+                String equationTxt = buttonPercent.getText().toString();
+                input_expression.append(equationTxt);
 
             }
         });
@@ -354,7 +510,8 @@ public class MainActivity extends Activity {
                 }
             });
 
-        } if (getResources().getConfiguration().orientation ==
+        }
+        if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
             //Button TAN
             final Button buttonTan = (Button) findViewById(R.id.tan);
@@ -400,19 +557,19 @@ public class MainActivity extends Activity {
         }
 
         if (getResources().getConfiguration().orientation ==
-    Configuration.ORIENTATION_LANDSCAPE) {
-        //Button Radians
-        final Button buttonRad = (Button) findViewById(R.id.radian);
-        buttonRad.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button Radians
+            final Button buttonRad = (Button) findViewById(R.id.radian);
+            buttonRad.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
 
-                String equationTxt = buttonRad.getText().toString();
-                input_expression.append(equationTxt);
+                    String equationTxt = buttonRad.getText().toString();
+                    input_expression.append(equationTxt);
 
-            }
-        });
+                }
+            });
 
-    }
+        }
 
         if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
@@ -487,4 +644,3 @@ public class MainActivity extends Activity {
 
 
 }
-
