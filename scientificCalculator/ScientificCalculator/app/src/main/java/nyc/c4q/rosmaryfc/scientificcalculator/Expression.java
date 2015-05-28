@@ -1,5 +1,3 @@
-package nyc.c4q.rosmaryfc.scientificcalculator;
-
 /*
  * Copyright 2012 Udo Klimaschewski
  *
@@ -26,6 +24,10 @@ package nyc.c4q.rosmaryfc.scientificcalculator;
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+package nyc.c4q.rosmaryfc.scientificcalculator;
+
+//package com.udojava.evalex;
+
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -37,8 +39,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
-
-//package com.udojava.evalex;
 
 /**
  * <h1>EvalEx - Java Expression Evaluator</h1>
@@ -198,6 +198,9 @@ import java.util.Stack;
  *
  *@author Udo Klimaschewski (http://about.me/udo.klimaschewski)
  */
+
+
+
 public class Expression {
 
     /**
@@ -205,7 +208,11 @@ public class Expression {
      */
     public static final BigDecimal PI = new BigDecimal(
             "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679");
-
+    /**
+     * Definition of e as a constant, can be used in expressions as variable.
+     */
+    public static final BigDecimal e = new BigDecimal(
+            "2.71828182846");
     /**
      * The {@link MathContext} to use for calculations.
      */
@@ -743,14 +750,14 @@ public class Expression {
                 return parameters.get(0).abs(mc);
             }
         });
-        addFunction(new Function("LOG", 1) {
+        addFunction(new Function("LN", 1) {
             @Override
             public BigDecimal eval(List<BigDecimal> parameters) {
                 double d = Math.log(parameters.get(0).doubleValue());
                 return new BigDecimal(d, mc);
             }
         });
-        addFunction(new Function("LOG10", 1) {
+        addFunction(new Function("LOG10", 1) { //Log 10
             @Override
             public BigDecimal eval(List<BigDecimal> parameters) {
                 double d = Math.log10(parameters.get(0).doubleValue());
@@ -813,6 +820,7 @@ public class Expression {
         });
 
         variables.put("PI", PI);
+        variables.put("e", e);
         variables.put("TRUE", BigDecimal.ONE);
         variables.put("FALSE", BigDecimal.ZERO);
 
@@ -1125,5 +1133,12 @@ public class Expression {
         return result;
     }
 
-}
 
+    public  static void factorial (int input) {
+        int Result =1;
+        for ( int i = input; i >1; i --) {
+            Result =Result*i;
+        }
+    }
+
+}

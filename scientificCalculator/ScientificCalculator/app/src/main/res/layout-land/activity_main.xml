@@ -40,6 +40,7 @@
             android:textSize="30dp"
             android:gravity="right"
             android:text=""
+            android:freezesText="true"
             />
 
 
@@ -97,11 +98,11 @@
                         android:textSize="30dp"/>
 
                     <Button
-                        android:id="@+id/factor"
+                        android:id="@+id/e"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="!"
+                        android:text="e"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
                         android:textSize="30dp"/>
@@ -117,12 +118,12 @@
                     android:layout_weight="1">
 
                     <Button
-                        android:id="@+id/invert"
+                        android:id="@+id/pos_neg"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="INV"
-                        android:background="#ffab89c6"
+                        android:text="+/-"
+                        android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="30dp"
                         android:textAlignment="center"/>
@@ -138,12 +139,12 @@
                         android:textSize="30dp"/>
 
                     <Button
-                        android:id="@+id/ln"
+                        android:id="@+id/log10"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="LN"
-                        android:background="#ffab89c6"
+                        android:text="LOG10"
+                        android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="30dp"/>
 
@@ -174,17 +175,21 @@
                         android:text="COS"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="30dp"/>
+                        android:textSize="30dp"
+                        android:hint="("
+                        android:textColorHint="#d3d3d3"/>
 
                     <Button
-                        android:id="@+id/Log"
+                        android:id="@+id/LOG"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="LOG"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="30dp"/>
+                        android:textSize="30dp"
+                        android:hint="("
+                        android:textColorHint="#d3d3d3"/>
 
                 </LinearLayout>
 
@@ -196,12 +201,13 @@
                     android:layout_weight="1">
 
                     <Button
-                        android:id="@+id/e"
+                        android:id="@+id/exp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="e"
-                        android:background="#ffab89c6"
+                        android:text="EXP"
+                        android:textAllCaps="false"
+                        android:background="#ffe8c3ff"
                         android:textColor="#fff"
                         android:textSize="30dp"/>
 
@@ -216,14 +222,14 @@
                         android:textSize="30dp"/>
 
                     <Button
-                        android:id="@+id/Log10"
+                        android:id="@+id/abs"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="LOG10"
-                        android:background="#ffab89c6"
+                        android:text="ABS"
+                        android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="25dp"/>
+                        android:textSize="40dp"/>
 
 
 
@@ -250,10 +256,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text=" ^ "
-                        android:background="#ffab89c6"
+                        android:textSize="30dp"
+                        android:text=" X^y "
+                        android:background="#ffe8c3ff"
                         android:textColor="#fff"
-                        android:textSize="30dp"/>
+                        />
 
                     <Button
                         android:id="@+id/square_root"
@@ -263,7 +270,9 @@
                         android:text="SQRT"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
-                        android:textSize="30dp"/>
+                        android:textSize="30dp"
+                        android:hint="("
+                        android:textColorHint="#d3d3d3"/>
 
                 </LinearLayout>
 

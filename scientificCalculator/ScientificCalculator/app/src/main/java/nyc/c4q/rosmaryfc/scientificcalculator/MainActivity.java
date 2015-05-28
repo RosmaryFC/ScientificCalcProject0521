@@ -35,7 +35,6 @@ public class MainActivity extends Activity {
         return false;
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +54,6 @@ public class MainActivity extends Activity {
 
         expressionIsEvaluated = false;
         answerForBtnAns = "";
-
 
         //Button =
         final Button buttonEqual = (Button) findViewById(R.id.equal);
@@ -93,7 +91,6 @@ public class MainActivity extends Activity {
                     input_expression.setText(input_answer.getText().toString());
                     input_answer.setText("");
                     expressionIsEvaluated = false;
-
                 } else {
                     if (input_expression.length() != 0) {
 
@@ -442,7 +439,6 @@ public class MainActivity extends Activity {
             }
         });
 
-        //todo: configure button
         //Button %
         final Button buttonPercent = (Button) findViewById(R.id.percent);
         buttonPercent.setOnClickListener(new View.OnClickListener() {
@@ -454,8 +450,7 @@ public class MainActivity extends Activity {
                     expressionIsEvaluated = false;
                 }
 
-                String equationTxt = buttonPercent.getText().toString();
-                input_expression.append(equationTxt);
+                input_expression.append("/100");
 
             }
         });
@@ -478,6 +473,7 @@ public class MainActivity extends Activity {
 
         }
 
+          //ButtonSquare Root
         if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
             //Button square root
@@ -539,57 +535,43 @@ public class MainActivity extends Activity {
 
         if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
-            //Button Factorial
-            final Button buttonFact = (Button) findViewById(R.id.factor);
-            buttonFact.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-
-                    String equationTxt = buttonFact.getText().toString();
-                    input_expression.append(equationTxt);
-
-                }
-            });
-
-        }
-
-        if (getResources().getConfiguration().orientation ==
-                Configuration.ORIENTATION_LANDSCAPE) {
             //Button Degree
-            final Button buttonDeg = (Button) findViewById(R.id.factor);
+            final Button buttonDeg = (Button) findViewById(R.id.degree);
             buttonDeg.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
                     String equationTxt = buttonDeg.getText().toString();
                     input_expression.append(equationTxt);
 
+
                 }
             });
 
         }
 
         if (getResources().getConfiguration().orientation ==
-    Configuration.ORIENTATION_LANDSCAPE) {
-        //Button Radians
-        final Button buttonRad = (Button) findViewById(R.id.radian);
-        buttonRad.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button Radians
+            final Button buttonRad = (Button) findViewById(R.id.radian);
+            buttonRad.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
 
-                String equationTxt = buttonRad.getText().toString();
-                input_expression.append(equationTxt);
+                    String equationTxt = buttonRad.getText().toString();
+                    input_expression.append(equationTxt);
 
-            }
-        });
+                }
+            });
 
-    }
+        }
 
         if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
             //Button Log10
-            final Button buttonLog10= (Button) findViewById(R.id.Log10);
-            buttonLog10.setOnClickListener(new View.OnClickListener() {
+            final Button buttonLog= (Button) findViewById(R.id.log10);
+            buttonLog.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
-                    String equationTxt = buttonLog10.getText().toString();
+                    String equationTxt = buttonLog.getText().toString();
                     input_expression.append(equationTxt);
 
                 }
@@ -605,6 +587,21 @@ public class MainActivity extends Activity {
                 public void onClick(View v) {
 
                     String equationTxt = buttonCarat.getText().toString();
+                    input_expression.append("^");
+
+                }
+            });
+
+        }
+
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            //Button LN
+            final Button buttonLN = (Button) findViewById(R.id.LOG);
+            buttonLN.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonLN.getText().toString();
                     input_expression.append(equationTxt);
 
                 }
@@ -614,12 +611,12 @@ public class MainActivity extends Activity {
 
         if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
-            //Button Log
-            final Button buttonLog = (Button) findViewById(R.id.Log);
-            buttonLog.setOnClickListener(new View.OnClickListener() {
+            //Button abs
+            final Button buttonAbs = (Button) findViewById(R.id.abs);
+            buttonAbs.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
-                    String equationTxt = buttonLog.getText().toString();
+                    String equationTxt = buttonAbs.getText().toString();
                     input_expression.append(equationTxt);
 
                 }
@@ -641,15 +638,27 @@ public class MainActivity extends Activity {
                     }
                     String expString = input_expression.getText().toString();
 
-                    if(answerForBtnAns.length() == 0) {
+                    if (answerForBtnAns.length() == 0) {
                         return;
-                    } else if(expString.length()>= 1) {
-                        if(expString.substring(((expString.length() - answerForBtnAns.length()) ), (expString.length())).equals(answerForBtnAns)) {
+                    } else if (expString.length() >= 1) {
+                        if (expString.substring(((expString.length() - answerForBtnAns.length())), (expString.length())).equals(answerForBtnAns)) {
                             input_expression.append("*" + answerForBtnAns);
                         }
-                    }else if (answerForBtnAns.length() != 0) {
+                    } else if (answerForBtnAns.length() != 0) {
                         input_expression.append(answerForBtnAns);
                     }
+                }
+            });
+
+
+            //Button EXP
+            final Button buttonExp = (Button) findViewById(R.id.exp);
+            buttonExp.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    String equationTxt = buttonExp.getText().toString();
+                    input_expression.append("*10^");
+
                 }
             });
 
@@ -682,5 +691,7 @@ public class MainActivity extends Activity {
     }
 
 
-}
 
+
+
+}
