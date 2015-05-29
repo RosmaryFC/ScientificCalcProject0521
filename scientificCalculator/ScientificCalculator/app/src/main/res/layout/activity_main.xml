@@ -40,7 +40,11 @@
             android:textColor="#ff68ff65"
             android:textSize="40dp"
             android:gravity="right"
+
             android:text=""
+
+
+
             android:freezesText="true"/>
 
     </LinearLayout>

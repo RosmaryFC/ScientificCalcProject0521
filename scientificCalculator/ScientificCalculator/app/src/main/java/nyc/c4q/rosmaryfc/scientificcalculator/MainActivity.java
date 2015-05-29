@@ -21,10 +21,16 @@ public class MainActivity extends Activity {
 
     private Expression expression;
     private boolean expressionIsEvaluated;
+
     private String answerForBtnAns;
     //protected String input_expression_txt = "";
 
     public boolean previousCharIsOperator(String expression) {
+
+
+
+
+
 
         if(expression.length() >= 1){
             char previous_Char = expression.charAt(expression.length()-1);
@@ -34,6 +40,11 @@ public class MainActivity extends Activity {
         }
         return false;
     }
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +64,10 @@ public class MainActivity extends Activity {
 
 
         expressionIsEvaluated = false;
+
         answerForBtnAns = "";
+
+
 
         //Button =
         final Button buttonEqual = (Button) findViewById(R.id.equal);
@@ -65,7 +79,10 @@ public class MainActivity extends Activity {
                     BigDecimal response = expression.eval();
                     input_answer.setText(response.toPlainString());
 
+
                     answerForBtnAns = response.toPlainString();
+
+
 
                     //input_expression_txt = "";
 
@@ -91,6 +108,10 @@ public class MainActivity extends Activity {
                     input_expression.setText(input_answer.getText().toString());
                     input_answer.setText("");
                     expressionIsEvaluated = false;
+
+
+
+
                 } else {
                     if (input_expression.length() != 0) {
 
@@ -301,7 +322,11 @@ public class MainActivity extends Activity {
                 }
 
                 String inputExpStr = input_expression.getText().toString();
+
                 if(inputExpStr.length() == 0 || previousCharIsOperator(inputExpStr)) {
+
+
+
                     return;
                 } else {
                     String equationTxt = buttonDivide.getText().toString();
@@ -323,7 +348,11 @@ public class MainActivity extends Activity {
                 }
 
                 String inputExpStr = input_expression.getText().toString();
+
                 if(inputExpStr.length() == 0 || previousCharIsOperator(inputExpStr)) {
+
+
+
                     return;
                 } else {
                     String equationTxt = buttonMultiply.getText().toString();
@@ -345,7 +374,11 @@ public class MainActivity extends Activity {
                 }
 
                 String inputExpStr = input_expression.getText().toString();
+
                 if(inputExpStr.length() == 0 || previousCharIsOperator(inputExpStr)) {
+
+
+
                     return;
                 }else {
                     String equationTxt = buttonSubtract.getText().toString();
@@ -366,7 +399,11 @@ public class MainActivity extends Activity {
                 }
 
                 String inputExpStr = input_expression.getText().toString();
+
                 if(inputExpStr.length() == 0 || previousCharIsOperator(inputExpStr)) {
+
+
+
                     return;
                 }else {
                     String equationTxt = buttonAdd.getText().toString();
@@ -395,7 +432,11 @@ public class MainActivity extends Activity {
                     if(inputExpStr.substring(inputExpStr.length()-2, inputExpStr.length()-1) == "0.") {
                         return;
                     }
+
                 } else if(inputExpStr.length() == 0 || previousCharIsOperator(inputExpStr)) { //adds 0. if last char is + - * / % (
+
+
+
                     input_expression.append("0.");
                 } else {
                     String equationTxt = buttonDecimalPoint.getText().toString();
@@ -439,16 +480,27 @@ public class MainActivity extends Activity {
             }
         });
 
+        //todo: configure button
         //Button %
         final Button buttonPercent = (Button) findViewById(R.id.percent);
         buttonPercent.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+<<<<<<< HEAD
                 if (expressionIsEvaluated) {
                     input_expression.setText("");
                     input_answer.setText("");
                     expressionIsEvaluated = false;
                 }
+
+
+
+
+
+
+
+
+
 
                 input_expression.append("/100");
 
@@ -472,6 +524,9 @@ public class MainActivity extends Activity {
             });
 
         }
+
+
+
 
           //ButtonSquare Root
         if (getResources().getConfiguration().orientation ==
@@ -547,6 +602,11 @@ public class MainActivity extends Activity {
                 }
             });
 
+
+
+
+
+
         }
 
         if (getResources().getConfiguration().orientation ==
@@ -559,12 +619,31 @@ public class MainActivity extends Activity {
                     String equationTxt = buttonRad.getText().toString();
                     input_expression.append(equationTxt);
 
+
                 }
             });
 
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         if (getResources().getConfiguration().orientation ==
+
                 Configuration.ORIENTATION_LANDSCAPE) {
             //Button Log10
             final Button buttonLog= (Button) findViewById(R.id.log10);
@@ -626,6 +705,7 @@ public class MainActivity extends Activity {
 
         if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_LANDSCAPE) {
+
             //Button ANS
             final Button buttonAns = (Button) findViewById(R.id.answer);
             buttonAns.setOnClickListener(new View.OnClickListener() {
@@ -649,6 +729,8 @@ public class MainActivity extends Activity {
                     }
                 }
             });
+
+
 
 
             //Button EXP
@@ -694,4 +776,8 @@ public class MainActivity extends Activity {
 
 
 
+
 }
+
+
+

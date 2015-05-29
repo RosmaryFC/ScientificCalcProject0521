@@ -28,7 +28,12 @@
             android:textColor="#fff"
             android:textSize="30dp"
             android:gravity="right"
+
             android:text=""/>
+
+
+
+
 
         <TextView
             android:id="@+id/input_answer"
@@ -39,7 +44,11 @@
             android:textColor="#ff68ff65"
             android:textSize="30dp"
             android:gravity="right"
+
             android:text=""
+
+
+
             android:freezesText="true"
             />
 
@@ -175,7 +184,11 @@
                         android:text="COS"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
+
                         android:textSize="30dp"
+
+
+
                         android:hint="("
                         android:textColorHint="#d3d3d3"/>
 
@@ -187,7 +200,11 @@
                         android:text="LOG"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
+
                         android:textSize="30dp"
+
+
+
                         android:hint="("
                         android:textColorHint="#d3d3d3"/>
 
@@ -256,10 +273,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+
                         android:textSize="30dp"
                         android:text=" X^y "
                         android:background="#ffe8c3ff"
                         android:textColor="#fff"
+
+
+
+
+
+
                         />
 
                     <Button
@@ -270,7 +294,11 @@
                         android:text="SQRT"
                         android:background="#ffab89c6"
                         android:textColor="#fff"
+
                         android:textSize="30dp"
+
+
+
                         android:hint="("
                         android:textColorHint="#d3d3d3"/>
 
