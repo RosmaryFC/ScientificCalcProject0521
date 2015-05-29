@@ -2,46 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/Users/s3a/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
+        jar="/Users/c4q-rosmary/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="/Users/s3a/Desktop/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-a1f23fd680a5dc645a071d58fba2108b37fce5c6.jar" />
+        <dex dex="/Users/c4q-rosmary/Desktop/accessCodeUnit-1/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-7838ffc8c988c6c18d92664c87e78b97751cb256.jar" />
     </item>
     <item
-        jar="/Users/s3a/Desktop/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="/Users/s3a/Desktop/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/pre-dexed/debug/classes-f0322eb56fe44d8485047a47f0f7046e072c4861.jar" />
-    </item>
-    <item
-        jar="/Users/s3a/Desktop/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/libs/EvalEx.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="728c4cf1254456a0eac3bd560422e0e6764cac65">
-        <dex dex="/Users/s3a/Desktop/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/pre-dexed/debug/EvalEx-cb51335a554e4d7e17fdc138df80d938039d188a.jar" />
-    </item>
-    <item
-        jar="/Users/s3a/Desktop/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
-        <dex dex="/Users/s3a/Desktop/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/pre-dexed/debug/classes-4853333dec3045a59eb40b549361b0c643fe5249.jar" />
-    </item>
-    <item
-        jar="/Users/s3a/Desktop/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/libs/internal_impl-22.1.1.jar"
+        jar="/Users/c4q-rosmary/Desktop/accessCodeUnit-1/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/libs/internal_impl-22.1.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="/Users/s3a/Desktop/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-b09a1c252d5a51f3cb2fad75fa362480d8f23d49.jar" />
+        <dex dex="/Users/c4q-rosmary/Desktop/accessCodeUnit-1/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-ac8b9b644504d21421071fcb246649b25c342e7c.jar" />
     </item>
     <item
-        jar="/Users/s3a/Desktop/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/libs/javaluator-3.0.0.jar"
+        jar="/Users/c4q-rosmary/Desktop/accessCodeUnit-1/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="ce994b915caa3ce1994be5a20ee77e980c77a85a">
-        <dex dex="/Users/s3a/Desktop/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/pre-dexed/debug/javaluator-3.0.0-de2f6e7d070f896392896a8ef52d437ab5cb60ba.jar" />
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="/Users/c4q-rosmary/Desktop/accessCodeUnit-1/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/pre-dexed/debug/classes-4fbebb7a59733bded7623f01391aa5ed6ee36b8b.jar" />
+    </item>
+    <item
+        jar="/Users/c4q-rosmary/Desktop/accessCodeUnit-1/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="/Users/c4q-rosmary/Desktop/accessCodeUnit-1/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/pre-dexed/debug/classes-b1333a17817cbd059b9db2504dc16458802a6de3.jar" />
+    </item>
+    <item
+        jar="/Users/c4q-rosmary/Desktop/accessCodeUnit-1/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/libs/EvalEx.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="728c4cf1254456a0eac3bd560422e0e6764cac65">
+        <dex dex="/Users/c4q-rosmary/Desktop/accessCodeUnit-1/ScientificCalcProject0521/scientificCalculator/ScientificCalculator/app/build/intermediates/pre-dexed/debug/EvalEx-e7a0824529ac10e1c5d7233f87d5bd0e0eae2b15.jar" />
     </item>
 
 </items>
